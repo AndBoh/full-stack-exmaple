@@ -1,0 +1,62 @@
+// Модификатор radius
+@mixin input--radius {
+  &--radius {
+    @each $size, $value in $input-radius-map {
+      &-#{$size} {
+        border-radius: $value;
+      }
+    }
+  }
+}
+
+// Модификатор size
+@mixin input--size {
+  &--size {
+    @each $size, $value in $input-size-map {
+      &-#{$size} {
+        height: $value;
+      }
+    }
+  }
+}
+
+// Модификатор state
+@mixin input--state {
+  &--state {
+    @each $state, $state-color-map in $input-state-map {
+      &-#{$state} {
+        .app-input__message {
+          color: map-get($state-color-map, message);
+        }
+
+        .app-input__clear {
+          color: map-get($state-color-map, clear);
+
+          &:hover {
+            color: map-get($state-color-map, clear-hover);
+          }
+        }
+
+        .app-input__label,
+        .app-input__icon {
+          color: map-get($state-color-map, element);
+        }
+
+        .app-input__input {
+          background-color: map-get($state-color-map, background);
+          border-color: map-get($state-color-map, border);
+
+          &:focus {
+            background-color: map-get($state-color-map, background-focus);
+            border-color: map-get($state-color-map, border-focus);
+
+            & ~ .app-input__label,
+            & ~ .app-input__icon {
+              color: map-get($state-color-map, element-focus);
+            }
+          }
+        }
+      }
+    }
+  }
+}

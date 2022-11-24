@@ -1,0 +1,6 @@
+dist
+node_modules
+logs
+.env
+.idea
+.nyc_output

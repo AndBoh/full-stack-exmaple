@@ -1,0 +1,19 @@
+@mixin typography--size($type, $map) {
+  .#{$type} {
+    &--bold {
+      font-weight: map-get($typography-bold-font-weight-map, $type);
+    }
+
+    @each $size, $media-param-map in $map {
+      &--#{$size} {
+        font-size: nth(map-get($media-param-map, mobile), 1);
+        line-height: nth(map-get($media-param-map, mobile), 2);
+
+        @include breakpoint(desktop) {
+          font-size: nth(map-get($media-param-map, desktop), 1);
+          line-height: nth(map-get($media-param-map, desktop), 2);
+        }
+      }
+    }
+  }
+}

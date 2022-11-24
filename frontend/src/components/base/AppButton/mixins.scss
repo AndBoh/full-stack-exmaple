@@ -1,0 +1,61 @@
+// Модификатор radius
+@mixin button--radius() {
+  &--radius {
+    @each $radius-size, $value in $button-radius-map {
+      &-#{$radius-size} {
+        border-radius: $value;
+      }
+    }
+  }
+}
+
+// Модификатор size
+@mixin button--size() {
+  &--size {
+    @each $size, $size-property-map in $button-size-map {
+      &-#{$size} {
+        @each $property, $value in $size-property-map {
+          #{$property}: var(--button-#{$property}, $value);
+        }
+      }
+    }
+
+    &-icon {
+      height: var(--button-height, 56px);
+      width: var(--button-height, 56px);
+
+      .app-button__content {
+        display: block;
+      }
+    }
+  }
+}
+
+// Модификатор type
+@mixin button--type {
+  &--type {
+    @each $type, $type-data in $button-type-map {
+      &-#{$type} {
+        @each $property, $value in map-get($type-data, base) {
+          #{$property}: $value,
+        }
+        &:not(:disabled) {
+          @each $property in map-get($type-data, state) {
+            &:hover {
+              #{$property}: $button-hover-property-value,
+            }
+            &:active {
+              #{$property}: $button-active-property-value,
+            }
+            @if $type == text {
+              &:focus {
+                outline: none;
+                background-color: $color-input-background;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

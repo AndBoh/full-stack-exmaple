@@ -1,0 +1,18 @@
+@mixin fixed-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Модификатор size
+@mixin modal-window--size {
+  &--size {
+    @each $size, $value in $modal-window-width-map {
+      &-#{$size} {
+        width: var(--modal-window-width, $value);
+      }
+    }
+  }
+}

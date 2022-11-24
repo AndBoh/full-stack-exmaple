@@ -1,0 +1,45 @@
+// Схема для класса text--#{size} (font-size, line-height)
+$text-size-map: (
+  xsmall: (
+      mobile: (13px, 22px),
+      desktop: (14px, 20px),
+  ),
+  small: (
+      mobile: (14px, 24px),
+      desktop: (16px, 28px),
+  ),
+  medium: (
+      mobile: (16px, 28px),
+      desktop: (18px, 34px),
+  ),
+  large: (
+      mobile: (20px, 32px),
+      desktop: (23px, 38px),
+  ),
+);
+
+// Схема для класса header--#{size} (font-size, line-height)
+$header-size-map: (
+  small: (
+      mobile: (24px, 32px),
+      desktop: (32px, 34px),
+  ),
+  medium: (
+      mobile: (32px, 36px),
+      desktop: (48px, 50px),
+  ),
+  large: (
+      mobile: (48px, 50px),
+      desktop: (64px, 66px),
+  ),
+);
+
+// Схема font-weight для модификатора bold
+$typography-bold-font-weight-map: (
+  text: 500,
+  header: 700,
+);
+
+$font-weight-default: 400;
+$font-size-default: nth(map-get(map-get($text-size-map, small), mobile), 1);
+$font-size-desktop-default: nth(map-get(map-get($text-size-map, small), desktop), 1);

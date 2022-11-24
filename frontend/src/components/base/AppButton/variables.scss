@@ -1,0 +1,72 @@
+// Высота лоадера в состоянии loading
+$button-loader-height: 80%;
+
+// Толщина границы
+$button-border-size: 2px;
+
+// Outline для состояния focus
+$button-outline-size-focus: 3px;
+$button-outline-color-focus: $color-primary-light;
+
+// Значения параметров состояний для модификатора type
+$button-hover-property-value: $color-primary-dark;
+$button-active-property-value: $color-title-active;
+
+// Схема модификатора radius
+$button-radius-map: (
+  small: $radius-small,
+  medium: $radius-medium,
+  large: $radius-large,
+);
+
+// Схема модификатора size
+$button-size-map: (
+  large: (
+    height: 64px,
+    padding: 0 64px,
+  ),
+  medium: (
+    height: 56px,
+    padding: 0 32px,
+  ),
+  small: (
+    height: 40px,
+    padding: 0 24px,
+  ),
+);
+
+// Схема модификатора type
+$button-type-map: (
+  primary: (
+    base: (
+      background-color: $color-primary,
+      border-color: $color-primary,
+      color: $color-white,
+    ),
+    state: (background-color),
+  ),
+  secondary: (
+    base: (
+      background-color: $color-white,
+      border-color: $color-primary,
+      color: $color-primary,
+    ),
+    state: (border-color, color),
+  ),
+  subtle: (
+    base: (
+      background-color: $color-white,
+      border-color: $color-line,
+      color: $color-primary,
+    ),
+    state: (border-color, color),
+  ),
+  text: (
+    base: (
+      background-color: transparent,
+      border-color: transparent,
+      color: $color-primary,
+    ),
+    state: (color),
+  ),
+);

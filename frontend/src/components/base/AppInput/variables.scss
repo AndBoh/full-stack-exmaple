@@ -1,0 +1,52 @@
+// Толщина границы
+$input-border-size: 2px;
+
+// Схема для модификатора radius
+$input-radius-map: (
+  small: $radius-small,
+  medium: $radius-medium,
+  large: $radius-large,
+);
+
+// Схема для модификатора size
+$input-size-map: (
+  small: 56px,
+  large: 64px,
+);
+
+// Схема для модификатора state
+$input-state-map: (
+  normal: (
+    element: $color-placeholder,
+    message: $color-label,
+    background: $color-input-background,
+    border: $color-input-background,
+    element-focus: $color-label,
+    background-focus: $color-white,
+    border-focus: $color-title-active,
+    clear: $color-placeholder,
+    clear-hover: $color-title-active,
+  ),
+  error: (
+    element: $color-error,
+    message: $color-error,
+    background: $color-error-background,
+    border: $color-error,
+    element-focus: $color-error,
+    background-focus: $color-white,
+    border-focus: $color-error,
+    clear: $color-placeholder,
+    clear-hover: $color-error,
+  ),
+  success: (
+    element: $color-success,
+    message: $color-success,
+    background: $color-success-background,
+    border: $color-success,
+    element-focus: $color-success,
+    background-focus: $color-white,
+    border-focus: $color-success,
+    clear: $color-placeholder,
+    clear-hover: $color-success,
+  ),
+);

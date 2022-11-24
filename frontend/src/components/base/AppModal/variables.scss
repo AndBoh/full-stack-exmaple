@@ -1,0 +1,16 @@
+// Отступ от модального окна сверху и снизу
+$modal-vertical-margin: 100px;
+
+// Максимальный размер модального окна на мобильном
+$modal-max-height-mobile: 80vh;
+
+// Отступы внутри модального окна
+$modal-window-padding-mobile: 32px;
+$modal-window-padding-desktop: 48px;
+
+// Схема для модификатора size
+$modal-window-width-map: (
+  small: 450px,
+  medium: 650px,
+  large: 950px,
+);

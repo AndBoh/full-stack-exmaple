@@ -1,0 +1,19 @@
+@mixin transition($properties, $duration: $transition-duration-normal) {
+  transition-property: $properties;
+  transition-duration: $duration;
+  transition-timing-function: ease-out;
+}
+
+@mixin vue-transition-active($transition-name) {
+  .#{$transition-name}-enter-active,
+  .#{$transition-name}-leave-active {
+    @content
+  }
+}
+
+@mixin vue-transition-to-from($transition-name) {
+  .#{$transition-name}-enter-from,
+  .#{$transition-name}-leave-to {
+    @content
+  }
+}

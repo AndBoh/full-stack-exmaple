@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+html {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: $font-weight-default;
+  font-size: $font-size-default;
+
+  @include breakpoint(desktop) {
+    font-size: $font-size-desktop-default;
+  }
+}
+
+// Глобальные классы типографики
+
+// text--bold, text--large, text--medium, text--small, text-xsmall
+@include typography--size(text, $text-size-map);
+
+// header--bold, header--small, header--medium, header--small
+@include typography--size(header, $header-size-map);
